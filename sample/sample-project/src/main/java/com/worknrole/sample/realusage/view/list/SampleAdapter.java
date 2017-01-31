@@ -13,6 +13,11 @@ import com.wornrole.sample.R;
 
 import java.util.List;
 
+/**
+ * Created by worknrole on 24/01/17.
+ *
+ * Adapter used to displayed the list inside the {@link com.worknrole.sample.realusage.activity.MainActivity}
+ */
 public class SampleAdapter extends ArrayAdapter<Pair<String, Intent>> {
 
     public SampleAdapter(Context context, List<Pair<String, Intent>> sampleList) {

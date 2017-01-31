@@ -13,14 +13,25 @@ import com.worknrole.sample.realusage.manager.NetworkManager;
 
 public class WNRApplication extends Application {
 
+    //region Properties
+    /**
+     * This application singleton used inside the project
+     */
     private static WNRApplication mSingleton;
+
+    /**
+     * The {@link GyphyManager}
+     */
     private GyphyManager mGyphyManager;
+
+    /**
+     * The {@link NetworkManager}
+     */
     private NetworkManager mNetworkManager;
+    //endregion
 
-    public static WNRApplication get() {
-        return mSingleton;
-    }
 
+    //region Lifecycle
     @Override
     public void onCreate() {
         super.onCreate();
@@ -28,12 +39,30 @@ public class WNRApplication extends Application {
         mGyphyManager = new GyphyManager();
         mNetworkManager = new NetworkManager(getApplicationContext());
     }
+    //endregion
 
-    //region custom managers
+
+    //region Accessors
+    /**
+     * Get the application instance for calling managers like a singleton
+     * @return The application instance
+     */
+    public static WNRApplication get() {
+        return mSingleton;
+    }
+
+    /**
+     * Get the {@link GyphyManager}
+     * @return The {@link GyphyManager}
+     */
     public GyphyManager gyphyManager() {
         return mGyphyManager;
     }
 
+    /**
+     * Get the {@link NetworkManager}
+     * @return The {@link NetworkManager}
+     */
     public NetworkManager networkManager() {
         return mNetworkManager;
     }

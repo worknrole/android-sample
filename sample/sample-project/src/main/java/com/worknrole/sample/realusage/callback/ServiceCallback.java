@@ -6,6 +6,8 @@ import com.worknrole.sample.realusage.service.ResponseStatus;
 
 /**
  * Created by worknrole on 26/01/17.
+ *
+ * A custom services callback
  */
 
 public interface ServiceCallback<ResultType> {

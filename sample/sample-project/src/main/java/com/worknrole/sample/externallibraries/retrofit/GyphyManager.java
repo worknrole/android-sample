@@ -73,12 +73,21 @@ public class GyphyManager {
     }
 
 
+    /**
+     * Create a custom cache named "http-cache"
+     * It's will be created under the data/data/ directory
+     * @return The custom cache
+     */
     private Cache createCache() {
         return new Cache(
-                    new File(WNRApplication.get().getCacheDir(), "http-cache"),
-                    10 * 1024 * 1024); // 10MB
+                new File(WNRApplication.get().getCacheDir(), CACHE_NAME),
+                10 * 1024 * 1024); // 10MB
     }
 
+    /**
+     * Create a custom cache management for online and offline request
+     * @return The custom cache manager
+     */
     private Interceptor createCacheInterceptor() {
         return new Interceptor() {
             @Override

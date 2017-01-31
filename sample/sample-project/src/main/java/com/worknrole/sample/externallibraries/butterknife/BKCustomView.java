@@ -31,11 +31,29 @@ import butterknife.OnEditorAction;
 public class BKCustomView extends PercentRelativeLayout implements ViewBridge {
 
     //region Properties
+    /**
+     * The view title
+     */
     @BindView(R.id.title) TextView mTitle;
+
+    /**
+     * The gyphy image to display
+     */
     @BindView(R.id.image) ImageView mImage;
+
+    /**
+     * The search terms field
+     */
     @BindView(R.id.searchTerms) EditText mTerms;
+
+    /**
+     * The button launching the request
+     */
     @BindView(R.id.searchBtn) Button mSearchBtn;
 
+    /**
+     * The presenter managing the update
+     */
     private BKCustomPresenter mBKCustomPresenter;
     //endregion
 
@@ -63,6 +81,14 @@ public class BKCustomView extends PercentRelativeLayout implements ViewBridge {
     //endregion
 
     //region update methods
+
+    /**
+     * The method called after a click on the keyboard action done
+     * @param v The view used to edit the corresponding text
+     * @param actionId The type of action launched
+     * @param event The type of key event
+     * @return  true of the event has been handled
+     */
     @OnEditorAction(R.id.searchTerms)
     public boolean updateOnActionDone(TextView v, int actionId, KeyEvent event) {
         if (actionId == EditorInfo.IME_ACTION_DONE) {
@@ -72,6 +98,9 @@ public class BKCustomView extends PercentRelativeLayout implements ViewBridge {
         return false;
     }
 
+    /**
+     * The method called after a click on the search button
+     */
     @OnClick(R.id.searchBtn)
     public void updateOnClick() {
         final String terms = mTerms.getText().toString();

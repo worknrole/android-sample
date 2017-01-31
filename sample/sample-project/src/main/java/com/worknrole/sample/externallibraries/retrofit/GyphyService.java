@@ -16,6 +16,13 @@ public interface GyphyService {
     String API_URL = "http://api.giphy.com/v1/gifs/";
     String PUBLIC_API_KEY = "dc6zaTOxFJmzC";
 
+    /**
+     * Retrieve a list of gyphy contained inside a GyphyResponse object
+     * @param term Terms used to retrieve all gyphy images
+     * @param limit The limit of gyphy to retrieved (max = 100)
+     * @param offset The index where to begin the search
+     * @return A {@link Call} containing a GyphyResponse
+     */
     @GET("search?api_key=" + PUBLIC_API_KEY)
     Call<GyphyResponse> retrieveGyphyList(
             @Query(value="q", encoded = true) String term,
