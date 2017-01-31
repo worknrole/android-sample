@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">sample</string>
+    <string name="titleActivityMain">MainActivity</string>
+    <string name="firstTestActivity">Retrofit / Butterknife</string>
+</resources>
