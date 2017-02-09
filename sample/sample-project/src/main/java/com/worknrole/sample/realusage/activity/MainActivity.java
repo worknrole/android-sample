@@ -6,6 +6,7 @@ import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 
+import com.worknrole.sample.externallibraries.otto.OttoActivity;
 import com.worknrole.sample.realusage.view.list.SampleAdapter;
 import com.wornrole.sample.R;
 
@@ -27,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
         itemList.add(new Pair<>(
                 getResources().getString(R.string.firstTestActivity),
                 new Intent(this, FirstTestActivity.class)));
+        itemList.add(new Pair<>(
+                getResources().getString(R.string.ottoActivity),
+                new Intent(this, OttoActivity.class)));
 
         listView.setAdapter(new SampleAdapter(this, itemList));
     }
