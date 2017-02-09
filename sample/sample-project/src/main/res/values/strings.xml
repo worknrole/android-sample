@@ -3,4 +3,6 @@
     <string name="titleActivityMain">MainActivity</string>
     <string name="firstTestActivity">Retrofit / Butterknife</string>
     <string name="ottoActivity">Otto: Event bus</string>
+    <string name="mapsActivity">Google Maps</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
