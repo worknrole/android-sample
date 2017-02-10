@@ -1,4 +1,4 @@
-package com.worknrole.sample.realusage.manager;
+package com.worknrole.sample.framework.manager;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

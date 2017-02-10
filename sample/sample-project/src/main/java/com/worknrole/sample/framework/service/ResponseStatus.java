@@ -1,4 +1,4 @@
-package com.worknrole.sample.realusage.service;
+package com.worknrole.sample.framework.service;
 
 import android.support.annotation.IntDef;
 

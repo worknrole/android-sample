@@ -6,10 +6,10 @@
     android:id="@+id/activityFirstTest"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.worknrole.sample.realusage.activity.FirstTestActivity">
+    tools:context="com.worknrole.sample.externallibraries.butterknife.ButterKnifeActivity">
 
     <include
-        layout="@layout/view_custom_bk"
+        layout="@layout/butterknife_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

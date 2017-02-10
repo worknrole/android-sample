@@ -1,13 +1,13 @@
-package com.worknrole.sample.realusage.presenter;
+package com.worknrole.sample.framework.presenter;
 
 import android.os.AsyncTask;
 import android.support.v4.util.Pair;
 
-import com.worknrole.sample.realusage.WNRApplication;
-import com.worknrole.sample.realusage.callback.ServiceCallback;
-import com.worknrole.sample.realusage.presenter.BKCustomInterface.PresenterBridge;
-import com.worknrole.sample.realusage.presenter.BKCustomInterface.ViewBridge;
-import com.worknrole.sample.realusage.service.ResponseStatus;
+import com.worknrole.sample.framework.WNRApplication;
+import com.worknrole.sample.framework.callback.ServiceCallback;
+import com.worknrole.sample.framework.presenter.BKCustomInterface.PresenterBridge;
+import com.worknrole.sample.framework.presenter.BKCustomInterface.ViewBridge;
+import com.worknrole.sample.framework.service.ResponseStatus;
 import com.worknrole.sample.externallibraries.retrofit.GyphyManager;
 import com.worknrole.sample.externallibraries.retrofit.GyphyResponse;
 

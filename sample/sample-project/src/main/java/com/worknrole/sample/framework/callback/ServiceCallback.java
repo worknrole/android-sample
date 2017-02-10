@@ -1,8 +1,8 @@
-package com.worknrole.sample.realusage.callback;
+package com.worknrole.sample.framework.callback;
 
 import android.support.annotation.Nullable;
 
-import com.worknrole.sample.realusage.service.ResponseStatus;
+import com.worknrole.sample.framework.service.ResponseStatus;
 
 /**
  * Created by worknrole on 26/01/17.

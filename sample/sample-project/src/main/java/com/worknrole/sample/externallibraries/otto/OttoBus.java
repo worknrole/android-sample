@@ -1,5 +1,7 @@
 package com.worknrole.sample.externallibraries.otto;
 
+import android.util.Log;
+
 import com.squareup.otto.Bus;
 
 /**

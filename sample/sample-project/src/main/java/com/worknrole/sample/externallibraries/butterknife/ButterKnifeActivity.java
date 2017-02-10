@@ -1,15 +1,15 @@
-package com.worknrole.sample.realusage.activity;
+package com.worknrole.sample.externallibraries.butterknife;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.wornrole.sample.R;
 
-public class FirstTestActivity extends AppCompatActivity {
+public class ButterKnifeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_first_test);
+        setContentView(R.layout.butterknife_activity);
     }
 }

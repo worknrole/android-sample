@@ -12,8 +12,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
-import com.worknrole.sample.realusage.presenter.BKCustomInterface.ViewBridge;
-import com.worknrole.sample.realusage.presenter.BKCustomPresenter;
+import com.worknrole.sample.framework.presenter.BKCustomInterface.ViewBridge;
+import com.worknrole.sample.framework.presenter.BKCustomPresenter;
 import com.wornrole.sample.R;
 
 import butterknife.BindView;

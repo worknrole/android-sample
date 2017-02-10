@@ -1,9 +1,9 @@
-package com.worknrole.sample.realusage;
+package com.worknrole.sample.framework;
 
 import android.app.Application;
 
 import com.worknrole.sample.externallibraries.retrofit.GyphyManager;
-import com.worknrole.sample.realusage.manager.NetworkManager;
+import com.worknrole.sample.framework.manager.NetworkManager;
 
 /**
  * Created by worknrole on 24/01/17.

@@ -10,7 +10,7 @@
         android:textSize="20sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/firstTestActivity"/>
+        android:text="@string/butterknife_activity_name"/>
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/searchTermsLayout"

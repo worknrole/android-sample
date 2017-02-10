@@ -1,4 +1,4 @@
-package com.worknrole.sample.util;
+package com.worknrole.sample.framework;
 
 import okhttp3.logging.HttpLoggingInterceptor.Level;
 

@@ -1,9 +1,9 @@
 package com.worknrole.sample.externallibraries.retrofit;
 
-import com.worknrole.sample.realusage.WNRApplication;
-import com.worknrole.sample.realusage.callback.ServiceCallback;
-import com.worknrole.sample.realusage.service.ResponseStatus;
-import com.worknrole.sample.util.WNRConstant;
+import com.worknrole.sample.framework.WNRApplication;
+import com.worknrole.sample.framework.callback.ServiceCallback;
+import com.worknrole.sample.framework.service.ResponseStatus;
+import com.worknrole.sample.framework.WNRConstant;
 
 import java.io.File;
 import java.io.IOException;

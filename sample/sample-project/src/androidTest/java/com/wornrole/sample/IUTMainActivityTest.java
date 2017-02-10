@@ -4,7 +4,7 @@ import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.test.suitebuilder.annotation.LargeTest;
 
-import com.worknrole.sample.realusage.activity.MainActivity;
+import com.worknrole.sample.framework.activity.MainActivity;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -38,7 +38,7 @@ public class IUTMainActivityTest {
                 .perform(click());
 
         // Check if the main view of the second activity is visible
-        // = The FirstTestActivity has been launched
+        // = The ButterKnifeActivity has been launched
         onView(withId(R.id.activityFirstTest))
                 .check(matches(isDisplayed()));
     }

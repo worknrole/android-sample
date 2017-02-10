@@ -1,4 +1,4 @@
-package com.worknrole.sample.realusage.activity;
+package com.worknrole.sample.framework.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,8 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 
 import com.worknrole.sample.android.maps.MapsActivity;
+import com.worknrole.sample.externallibraries.butterknife.ButterKnifeActivity;
 import com.worknrole.sample.externallibraries.otto.OttoActivity;
-import com.worknrole.sample.realusage.view.list.SampleAdapter;
+import com.worknrole.sample.framework.view.list.SampleAdapter;
 import com.wornrole.sample.R;
 
 import java.util.ArrayList;
@@ -27,13 +28,13 @@ public class MainActivity extends AppCompatActivity {
         ListView listView = (ListView)findViewById(R.id.list_view);
         List<Pair<String, Intent>> itemList = new ArrayList<>();
         itemList.add(new Pair<>(
-                getResources().getString(R.string.firstTestActivity),
-                new Intent(this, FirstTestActivity.class)));
+                getResources().getString(R.string.butterknife_activity_name),
+                new Intent(this, ButterKnifeActivity.class)));
         itemList.add(new Pair<>(
-                getResources().getString(R.string.ottoActivity),
+                getResources().getString(R.string.otto_activity_name),
                 new Intent(this, OttoActivity.class)));
         itemList.add(new Pair<>(
-                getResources().getString(R.string.mapsActivity),
+                getResources().getString(R.string.maps_activity_name),
                 new Intent(this, MapsActivity.class)));
 
         listView.setAdapter(new SampleAdapter(this, itemList));

@@ -1,4 +1,4 @@
-package com.worknrole.sample.realusage.presenter;
+package com.worknrole.sample.framework.presenter;
 
 /**
  * Created by worknrole on 30/01/17.

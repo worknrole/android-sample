@@ -1,4 +1,4 @@
-package com.worknrole.sample.realusage.view.list;
+package com.worknrole.sample.framework.view.list;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * Created by worknrole on 24/01/17.
  *
- * Adapter used to displayed the list inside the {@link com.worknrole.sample.realusage.activity.MainActivity}
+ * Adapter used to displayed the list inside the {@link com.worknrole.sample.framework.activity.MainActivity}
  */
 public class SampleAdapter extends ArrayAdapter<Pair<String, Intent>> {
 

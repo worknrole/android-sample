@@ -10,7 +10,7 @@ public class OttoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_otto);
+        setContentView(R.layout.otto_activity);
 
         FirstOttoFragment firstFrag = new FirstOttoFragment();
         SecondOttoFragment secondFrag = new SecondOttoFragment();

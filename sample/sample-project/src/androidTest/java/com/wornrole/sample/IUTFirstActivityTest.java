@@ -1,11 +1,10 @@
 package com.wornrole.sample;
 
-import android.support.test.filters.LargeTest;
 import android.support.test.filters.SmallTest;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
-import com.worknrole.sample.realusage.activity.FirstTestActivity;
+import com.worknrole.sample.externallibraries.butterknife.ButterKnifeActivity;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -31,8 +30,8 @@ public class IUTFirstActivityTest {
     private String mSearchTerms;
 
     @Rule
-    public ActivityTestRule<FirstTestActivity> mActivityRule =
-            new ActivityTestRule<>(FirstTestActivity.class);
+    public ActivityTestRule<ButterKnifeActivity> mActivityRule =
+            new ActivityTestRule<>(ButterKnifeActivity.class);
 
     @Before
     public void initSearchTerms() {
