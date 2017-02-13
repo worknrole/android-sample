@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 
-def keyFile = new File("../../key.properties")
+def keyFile = new File("key.properties")
 def keyProps = new Properties()
 keyProps.load(new FileInputStream(keyFile))
 
