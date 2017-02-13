@@ -1,7 +1,20 @@
 <resources>
     <string name="app_name">sample</string>
-    <string name="main_activity_name">MainActivity</string>
     <string name="butterknife_activity_name">Retrofit - Butterknife</string>
     <string name="otto_activity_name">Otto: Event bus</string>
     <string name="maps_activity_name">Google Maps</string>
+
+    <string name="main_title">Android Samples</string>
+    <string name="main_by">(by Worknrole)</string>
+
+    <string name="maps_switch_style">Switch style</string>
+
+    <string name="otto_title">Otto: Event Bus</string>
+    <string name="otto_send_event">Send event</string>
+    <string name="otto_first_frag">FirstOttoFragment</string>
+    <string name="otto_second_frag">SecondOttoFragment</string>
+
+    <string name="bk_search">Search</string>
+    <string name="bk_search_terms">Search terms</string>
+    <string name="bk_image_description">Gyphy image</string>
 </resources>

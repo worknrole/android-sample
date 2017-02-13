@@ -22,7 +22,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Android Samples"/>
+            android:text="@string/main_title"/>
 
         <TextView
             android:textSize="16sp"
@@ -32,7 +32,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="(by Worknrole)"/>
+            android:text="@string/main_by"/>
 
         <ListView
             android:id="@+id/list_view"

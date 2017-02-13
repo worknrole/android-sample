@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="invisible"
-            android:text="Switch style"/>
+            android:text="@string/maps_switch_style"/>
 
     </RelativeLayout>
 

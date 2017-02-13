@@ -35,6 +35,11 @@ android {
             resValue "string", "key_maps", keyMaps
         }
     }
+
+    lintOptions {
+        warning 'InvalidPackage'
+        warning 'AllowBackup'
+    }
 }
 
 dependencies {

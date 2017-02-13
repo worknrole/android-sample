@@ -22,9 +22,9 @@
             android:id="@+id/searchTerms"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:singleLine="true"
+            android:maxLines="1"
             android:imeOptions="actionDone"
-            android:hint="Search terms"/>
+            android:hint="@string/bk_search_terms"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -34,10 +34,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
-        android:text="Search"/>
+        android:text="@string/bk_search"/>
 
     <ImageView
         android:id="@+id/image"
+        android:contentDescription="@string/bk_image_description"
         android:layout_below="@id/searchBtn"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

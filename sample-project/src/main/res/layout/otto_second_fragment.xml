@@ -10,14 +10,14 @@
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:layout_marginBottom="20dp"
-        android:text="SecondOttoFragment"/>
+        android:text="@string/otto_second_frag"/>
 
     <Button
         android:id="@+id/second_otto_btn"
         android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Send event"/>
+        android:text="@string/otto_send_event"/>
 
     <TextView
         android:id="@+id/second_otto_event_message"
