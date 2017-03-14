@@ -1,9 +1,11 @@
 package com.worknrole.sample.externallibraries.retrofit;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.worknrole.sample.framework.WNRApplication;
+import com.worknrole.sample.framework.WNRConstant;
 import com.worknrole.sample.framework.callback.ServiceCallback;
 import com.worknrole.sample.framework.service.ResponseStatus;
-import com.worknrole.sample.framework.WNRConstant;
 
 import java.io.File;
 import java.io.IOException;
@@ -31,6 +33,7 @@ public class GyphyManager {
 
     //region Properties
     private static final String CACHE_NAME = "http-cache";
+    public static final boolean ENABLE_MINIFY = false;
 
     /**
      * The gyphy web service
@@ -45,7 +48,9 @@ public class GyphyManager {
      * The constructor initializing the gyphy service
      */
     public GyphyManager() {
-        mService = getRetrofit(GyphyService.API_URL).create(GyphyService.class);
+        mService = ENABLE_MINIFY ?
+                getRetrofit(GyphyService.API_URL, buildCustomGsonConverter()).create(GyphyService.class) :
+                getRetrofit(GyphyService.API_URL).create(GyphyService.class);
     }
     //endregion
 
@@ -57,6 +62,16 @@ public class GyphyManager {
      * @return a retrofit object matching our service
      */
     private Retrofit getRetrofit(String apiUrl) {
+        return getRetrofit(apiUrl, null);
+    }
+
+     /**
+     * Get retrofit according to the first solution
+     * @param apiUrl The API url
+      * @param converterFactory Converter used to manipulate the Json response
+     * @return a retrofit object matching our service
+     */
+    private Retrofit getRetrofit(String apiUrl, GsonConverterFactory converterFactory) {
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(WNRConstant.SERVICE_LOG_LEVEL);
         OkHttpClient client = new OkHttpClient.Builder()
@@ -67,9 +82,23 @@ public class GyphyManager {
 
         return new Retrofit.Builder()
                 .baseUrl(apiUrl)
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(
+                        converterFactory == null ?
+                                GsonConverterFactory.create() :
+                                converterFactory)
                 .client(client)
                 .build();
+    }
+
+    /**
+     * Create a custom converter to manipulate the Json response
+     * @return a custom {@link GsonConverterFactory} to manipulate the Json response
+     */
+    private GsonConverterFactory buildCustomGsonConverter() {
+        GsonBuilder gsonBuilder = new GsonBuilder();
+        gsonBuilder.registerTypeAdapter(GyphyMinify.class, new GyphyDeserializer());
+        Gson gson = gsonBuilder.create();
+        return GsonConverterFactory.create(gson);
     }
 
 
@@ -111,7 +140,7 @@ public class GyphyManager {
 
     //region Custom methods
     /**
-     * Search for a gyphy image
+     * Search for a gyphy image with callback
      * @param terms All search terms
      * @param callback Response callback to the one asking for search
      */
@@ -129,6 +158,50 @@ public class GyphyManager {
 
             @Override
             public void onFailure(Call<GyphyResponse> call, Throwable t) {
+                callback.onResult(null, new ResponseStatus(ResponseStatus.FAILURE));
+            }
+        });
+    }
+
+    /**
+     * Search for a gyphy image and return it
+     * @param terms All search terms
+     * @return a gyphy image response
+     */
+    public GyphyResponse searchGyphy(String terms) {
+        GyphyResponse response = null;
+        String finalTerm = terms.replaceAll("\\+s", "+");
+        Call<GyphyResponse> gyphyCall = mService.retrieveGyphyList(finalTerm, 1, 0);
+
+        try {
+            response = gyphyCall.execute().body();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return response;
+    }
+
+
+    /**
+     * Search for a gyphy image with callback for {@link GyphyMinify}
+     * @param terms All search terms
+     * @param callback Response callback to the one asking for search
+     */
+    public void searchGyphyMinify(String terms, final ServiceCallback callback) {
+        String finalTerm = terms.replaceAll("\\+s", "+");
+        Call<GyphyMinify> gyphyCall = mService.retrieveGyphyListMinify(finalTerm, 1, 0);
+
+        gyphyCall.enqueue(new Callback<GyphyMinify>() {
+            @Override
+            public void onResponse(Call<GyphyMinify> call, Response<GyphyMinify> response) {
+                if (response.isSuccessful()) {
+                    callback.onResult(response.body(), new ResponseStatus(ResponseStatus.SUCCESS));
+                }
+            }
+
+            @Override
+            public void onFailure(Call<GyphyMinify> call, Throwable t) {
                 callback.onResult(null, new ResponseStatus(ResponseStatus.FAILURE));
             }
         });

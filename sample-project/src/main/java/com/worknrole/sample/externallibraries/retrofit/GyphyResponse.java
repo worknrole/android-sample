@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by worknrole on 24/01/17.
  *
- * Example of a Gyphy object matching the Json response
+ * Example of a GyphyMinify object matching the Json response
  */
 
 public class GyphyResponse {
